@@ -6,15 +6,18 @@ close all
 clear
 
 %--- URDF filename ---%
-filename='kuka_lwr.urdf';
+% filename='kuka_lwr.urdf';
 %filename='kuka_iiwa.urdf';
+% filename='UR3.urdf';
+filename='SC_3DoF.urdf';
 
 %--- Create robot model ---%
 [robot,robot_keys] = urdf2robot(filename);
 
 %--- Parameters ---%
 R0=eye(3);
-r0=zeros(3,1);
+% r0=zeros(3,1);
+r0 = [0;0;1];
 qm=zeros(robot.n_q,1);
 u0=zeros(6,1);
 um=zeros(robot.n_q,1);
